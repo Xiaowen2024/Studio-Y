@@ -9,6 +9,10 @@ EditorBuildSettings:
     path: Assets/Samples/Ultraleap Tracking/6.12.1/Interaction Examples/1. XR Examples/2.
       Building Blocks/5. Pose Detection/3. Pose Showcase.unity
     guid: b002df788c3b403428fac532ddb712b0
+  - enabled: 0
+    path: Assets/Samples/Ultraleap Tracking/6.12.1/Interaction Examples/1. XR Examples/2.
+      Building Blocks/5. Pose Detection/1. Pose Recorder.unity
+    guid: a55e9ab3836d4164f8f7e86c3f50ae99
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 52075d3e32345421ca2ec7f9892ac2d0, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 10c0509f52dbe4bff80bfcb46690e49a, type: 2}
