@@ -13,7 +13,7 @@ public class MovementRecognizer : MonoBehaviour
 
     public HandPoseDetector detector;
 
-    public float newPositionThresholdDistance = 0.05f;
+    public float newPositionThresholdDistance = 0.001f;
     public GameObject debugCubePrefab;
     public bool creationMode = true;
     public string newGestureName;
@@ -93,11 +93,7 @@ public class MovementRecognizer : MonoBehaviour
         isMoving = true;
         positionsList.Clear();
         positionsList.Add(movementSource.position);
-        for (int i = 0; i < positionsList.Count - 1; i++)
-        {
-            Debug.Log(positionsList[i]);
-        }
-        
+
 
         if (debugCubePrefab)
             Destroy(Instantiate(debugCubePrefab, movementSource.position, Quaternion.identity),3);
