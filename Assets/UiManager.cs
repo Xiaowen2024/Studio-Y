@@ -28,7 +28,9 @@ public class UiManager : MonoBehaviour
     public GameObject[] tutorialPages;
     private int currentIndex = 0;
 
+    public GameObject learningManager;
     public List<GameObject> poseDetectors;
+    
     
     void Start()
     {
@@ -118,11 +120,6 @@ public class UiManager : MonoBehaviour
             lessonCompleted = false;
         }
     }
-
-    public void ShowLessonCompleted()
-    {
-        
-    }
     
     public void SetThumbsUp(bool thumbsUp)
     {
@@ -179,6 +176,8 @@ public class UiManager : MonoBehaviour
             //button right = begin learning screen
             Learning.SetActive(false);
             //TODO: begin learning
+            learningManager.SetActive(true);
+            
         }
         
         else if (Battle.activeSelf)

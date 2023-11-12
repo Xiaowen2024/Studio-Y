@@ -955,10 +955,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 17fea58f-f102-41c3-af55-9d7644fa06de
+  cloudProjectId: 510c7316-1f6b-490f-a17c-32b722c3fc80
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Project (1)
+  projectName: StudioY
   organizationId: pieproductions
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
