@@ -98,7 +98,7 @@ public class spellManager : MonoBehaviour
         if (skeletonInitialized){
             return;
         }
-       newZombie = Instantiate(zombiePrefab, new Vector3(0,-2,8), Quaternion.identity);
+       newZombie = Instantiate(zombiePrefab, new Vector3(0,-4,10), Quaternion.identity);
        skeletonInitialized = true;
     }
     

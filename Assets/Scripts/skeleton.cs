@@ -20,12 +20,12 @@ public class skeleton : MonoBehaviour
 
     public void initializeZombie(){
         
-        this.transform.LookAt(new Vector3(0,-1,0));
+        this.transform.LookAt(new Vector3(0,-3,1));
         
     }
     
     public void moveZombie(){
-        this.transform.position = Vector3.MoveTowards(this.transform.position, new Vector3(0,-1,0), 0.01f);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, new Vector3(0,-3,1), 0.01f);
     }
 
 }
