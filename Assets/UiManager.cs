@@ -78,6 +78,7 @@ public class UiManager : MonoBehaviour
             LessonComplete.SetActive(false);
             //enable battelVictory
             BattleVictory.SetActive(true);
+            battleCompleted = false;
         }
 
         if (lessonCompleted)
@@ -89,7 +90,13 @@ public class UiManager : MonoBehaviour
             BattleVictory.SetActive(false);
             //enable battelVictory
             LessonComplete.SetActive(true);
+            lessonCompleted = false;
         }
+    }
+
+    public void ShowLessonCompleted()
+    {
+        
     }
 
     public void ButtonLeftPress()
@@ -155,9 +162,9 @@ public class UiManager : MonoBehaviour
             else
             {
                 //button right = next 
+                currentIndex++;
                 tutorialPages[currentIndex - 1].SetActive(false);
                 tutorialPages[currentIndex].SetActive(true);
-                currentIndex++;
             }
             
         }
