@@ -138,7 +138,11 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   bundleVersion: 0.1
   preloadedAssets:
+  - {fileID: 0}
   - {fileID: 11400000, guid: f3cfb0795455e4cba8ee13c1c66c4eaa, type: 2}
+  - {fileID: 2201629372972116091, guid: 10c0509f52dbe4bff80bfcb46690e49a, type: 2}
+  - {fileID: 11400000, guid: 52075d3e32345421ca2ec7f9892ac2d0, type: 2}
+  - {fileID: 11400000, guid: ac8db376e4ae53a4a9bab85fce31d1dd, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -507,7 +511,7 @@ PlayerSettings:
   - m_BuildTarget: iOSSupport
     m_GraphicsJobs: 0
   - m_BuildTarget: WindowsStandaloneSupport
-    m_GraphicsJobs: 1
+    m_GraphicsJobs: 0
   - m_BuildTarget: XboxOnePlayer
     m_GraphicsJobs: 1
   - m_BuildTarget: LuminSupport
@@ -534,6 +538,9 @@ PlayerSettings:
   - m_BuildTarget: WebGLSupport
     m_APIs: 0b000000
     m_Automatic: 1
+  - m_BuildTarget: WindowsStandaloneSupport
+    m_APIs: 02000000
+    m_Automatic: 0
   m_BuildTargetVRSettings:
   - m_BuildTarget: Standalone
     m_Enabled: 0
@@ -946,13 +953,13 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: a87fbe9e-5b2b-4db2-856f-21d281e54b41
+  cloudProjectId: 17fea58f-f102-41c3-af55-9d7644fa06de
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Project
-  organizationId: cathyzhang_unity
+  projectName: Project (1)
+  organizationId: pieproductions
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
