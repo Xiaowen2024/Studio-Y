@@ -27,8 +27,6 @@ public class UiManager : MonoBehaviour
     
     public GameObject[] tutorialPages;
     private int currentIndex = 0;
-
-    public List<GameObject> poseDetectors;
     
     void Start()
     {
@@ -54,28 +52,6 @@ public class UiManager : MonoBehaviour
     void Update()
     {
         //TODO: if thumb up is detected, disable this gameObject and enable ChooseMode.
-        
-        if (GameLoadScreen.activeSelf)
-        {
-            foreach (var pose in poseDetectors)
-            {
-                if (pose.name == "Thumbs Up")
-                {
-                    pose.SetActive(true);
-                }
-            }
-        }
-        else
-        {
-            foreach (var pose in poseDetectors)
-            {
-                if (pose.name == "Thumbs Up")
-                {
-                    pose.SetActive(false);
-                }
-            }
-        }
-        
         if (thumbsUp && GameLoadScreen.activeSelf)
         {
             GameLoadScreen.SetActive(false);
@@ -86,7 +62,6 @@ public class UiManager : MonoBehaviour
         {
             ButtonTable.SetActive(true);
         }
-        
         
         else if (GameLoadScreen.activeSelf || LessonComplete.activeSelf || BattleVictory.activeSelf)
         {
@@ -122,11 +97,6 @@ public class UiManager : MonoBehaviour
     public void ShowLessonCompleted()
     {
         
-    }
-    
-    public void SetThumbsUp(bool thumbsUp)
-    {
-        this.thumbsUp = thumbsUp;
     }
 
     public void ButtonLeftPress()
