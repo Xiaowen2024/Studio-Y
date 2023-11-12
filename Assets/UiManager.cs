@@ -29,6 +29,7 @@ public class UiManager : MonoBehaviour
     private int currentIndex = 0;
 
     public GameObject learningManager;
+    public GameObject battleManager;
     public List<GameObject> poseDetectors;
     
     
@@ -186,7 +187,9 @@ public class UiManager : MonoBehaviour
             if (currentIndex == 2)
             {
                 Battle.SetActive(false);
+                ButtonTable.SetActive(false);
                 //TODO: begin game
+                battleManager.SetActive(true);
             }
             else
             {

@@ -35,8 +35,6 @@ public class MovementRecognizer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //THIS 3 LIENS ARE NOT FROM THE VIDEO AND ARE ADDED TO ADD PREMADE GESTURES MADE DURING TUTORIAL
-        //THAT ARE NOT IN YOUR FILES YET
         TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/");
         foreach (TextAsset gestureXml in gesturesXml)
             trainingSet.Add(GestureIO.ReadGestureFromXML(gestureXml.text));

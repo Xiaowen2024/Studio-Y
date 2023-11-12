@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Samples/Ultraleap Tracking/6.12.1/Interaction Examples/1. XR Examples/2.
       Building Blocks/5. Pose Detection/3. Pose Showcase.unity
     guid: b002df788c3b403428fac532ddb712b0
@@ -13,7 +13,7 @@ EditorBuildSettings:
     path: Assets/Samples/Ultraleap Tracking/6.12.1/Interaction Examples/1. XR Examples/2.
       Building Blocks/5. Pose Detection/1. Pose Recorder.unity
     guid: a55e9ab3836d4164f8f7e86c3f50ae99
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/3. Pose Showcase 1.unity
     guid: caa040368a6ed432ca054b7ca56eba54
   m_configObjects:

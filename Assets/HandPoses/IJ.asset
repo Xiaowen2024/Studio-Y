@@ -17,28 +17,28 @@ MonoBehaviour:
   detectMiddle: 1
   detectRing: 1
   detectPinky: 1
-  globalRotation: 20
+  globalRotation: 90
   fingerJointRotationThresholds:
   - jointThresholds:
-    - {x: 20, y: 20}
-    - {x: 20, y: 20}
-    - {x: 20, y: 20}
+    - {x: 90, y: 90}
+    - {x: 90, y: 90}
+    - {x: 90, y: 90}
   - jointThresholds:
-    - {x: 20, y: 20}
-    - {x: 20, y: 20}
-    - {x: 20, y: 20}
+    - {x: 90, y: 90}
+    - {x: 90, y: 90}
+    - {x: 90, y: 90}
   - jointThresholds:
-    - {x: 20, y: 20}
-    - {x: 20, y: 20}
-    - {x: 20, y: 20}
+    - {x: 90, y: 90}
+    - {x: 90, y: 90}
+    - {x: 90, y: 90}
   - jointThresholds:
-    - {x: 20, y: 20}
-    - {x: 20, y: 20}
-    - {x: 20, y: 20}
+    - {x: 90, y: 90}
+    - {x: 90, y: 90}
+    - {x: 90, y: 90}
   - jointThresholds:
-    - {x: 20, y: 20}
-    - {x: 20, y: 20}
-    - {x: 20, y: 20}
+    - {x: 90, y: 90}
+    - {x: 90, y: 90}
+    - {x: 90, y: 90}
   serializedHand:
     FrameId: 0
     Id: 543

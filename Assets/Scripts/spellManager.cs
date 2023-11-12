@@ -27,10 +27,18 @@ public class spellManager : MonoBehaviour
     private bool skeletonInitialized = false;
 
     [SerializeField] private Wit wit;
+    public UiManager uiManager;
+    
+    public List<GameObject> poses;
+    public List<GameObject> poseCards;
+    public int poseIndex;
+    private float debounce = 3f;
+    private float timer = 0f;
+    public GameObject book;
 
 
     private Dictionary<string, GameObject> spellObjectDictionary = new Dictionary<string, GameObject>();
-    void Start()
+    void OnEnable()
     {
         fireObject.SetActive(true);
         iceObject.SetActive(true);
@@ -43,17 +51,58 @@ public class spellManager : MonoBehaviour
         spellObjectDictionary["water"] = waterObject;
         spellObjectDictionary["light"] = lightObject;
         initiateSkeleton();
+        book.SetActive(true);
     }
 
    
 
 
-   void Update()
-   {
-       
-   }
+    void Update()
+    {
+        timer += Time.deltaTime;
+    }
 
 
+    public void PoseSuccess()
+    {
+        if (debounce > timer)
+        {
+            timer = 0;
+            return;
+        }
+        poseCards[poseIndex].GetComponent<SpriteRenderer>().color = Color.green;
+        poseCards[poseIndex].GetComponent<AudioSource>().Play();
+        StartCoroutine(WaitForSeconds(2f));
+        
+    }
+    
+    IEnumerator WaitForSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        NextPose();
+    }
+    
+    private void NextPose()
+    {
+        if (poseIndex <= poses.Count - 1)
+        {
+            poses[poseIndex].SetActive(false);
+            poseCards[poseIndex].SetActive(false);
+            poseIndex++;
+            if (poseIndex != poses.Count)
+            {
+                poses[poseIndex].SetActive(true);
+                poseCards[poseIndex].SetActive(true);
+            }
+        }
+
+        if (poseIndex == poses.Count)
+        {
+            poses[poseIndex].SetActive(false);
+            poseCards[poseIndex].SetActive(false);
+            uiManager.lessonCompleted = true;
+        }
+    }
     
 
     // Update is called once per frame
@@ -80,6 +129,7 @@ public class spellManager : MonoBehaviour
         if (spellNames.Length == 0){
             return;
         }
+        Debug.LogError(spellNames[0]);
         foreach (string spellName in spellNames)
         {
             if (spellObjectDictionary.ContainsKey(spellName))
@@ -88,6 +138,17 @@ public class spellManager : MonoBehaviour
                 GameObject spellObject = spellObjectDictionary[spellName];
                 GameObject spellCopy = Instantiate(spellObject, newZombie.transform.position, spellManagerObject.transform.rotation);
                 spellCopy.transform.SetParent(newZombie.transform, true);
+                if (spellName == "fire")
+                {
+                    poseIndex = 0;
+                    poseCards[0].SetActive(true);
+                    poses[0].SetActive(true);
+                }
+
+                if (spellName == "ice")
+                {
+                    
+                }
                 //Invoke()
                 //newZombie.destroyZombie();
             }
@@ -95,10 +156,11 @@ public class spellManager : MonoBehaviour
     }
 
     public void initiateSkeleton(){
-        if (skeletonInitialized){
+        /*if (skeletonInitialized){
             return;
-        }
-       newZombie = Instantiate(zombiePrefab, new Vector3(0,-4,10), Quaternion.identity);
+        }*/
+        Debug.LogError("in here");
+       newZombie = Instantiate(zombiePrefab, new Vector3(0,-2,10), Quaternion.identity);
        skeletonInitialized = true;
     }
     
@@ -110,7 +172,8 @@ public class spellManager : MonoBehaviour
         Destroy(newZombie);
         Debug.Log("Destroy zombie");
         skeletonInitialized = false;
-        delayInitializeSkeleton();
+        //delayInitializeSkeleton();
+        uiManager.battleCompleted = true;
     }
 
     private IEnumerator DeactivateAfterDelay(GameObject obj, float delay)

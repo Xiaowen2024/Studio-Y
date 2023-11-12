@@ -33,16 +33,19 @@ public class LearningManager : MonoBehaviour
 
     private void NextPose()
     {
-        if (poseIndex < poses.Count - 1)
+        if (poseIndex <= poses.Count - 1)
         {
             poses[poseIndex].SetActive(false);
             poseCards[poseIndex].SetActive(false);
             poseIndex++;
-            poses[poseIndex].SetActive(true);
-            poseCards[poseIndex].SetActive(true);
+            if (poseIndex != poses.Count)
+            {
+                poses[poseIndex].SetActive(true);
+                poseCards[poseIndex].SetActive(true);
+            }
         }
 
-        if (poseIndex == poses.Count - 1)
+        if (poseIndex == poses.Count)
         {
             poses[poseIndex].SetActive(false);
             poseCards[poseIndex].SetActive(false);

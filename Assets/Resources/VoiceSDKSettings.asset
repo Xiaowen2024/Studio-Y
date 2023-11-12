@@ -21,8 +21,8 @@ MonoBehaviour:
     createdAt: 2023-11-09T22:21:01-0800
     trainingStatus: 1
     lastTrainDuration: 35
-    lastTrainedAt: 2023-11-11T12:56:03-0800
-    nextTrainAt: 2023-11-11T12:55:28-0800
+    lastTrainedAt: 2023-11-12T06:45:54-0800
+    nextTrainAt: 2023-11-12T06:45:19-0800
     intents:
     - id: 1420461825571748
       name: cast_spell
@@ -37,6 +37,8 @@ MonoBehaviour:
       entities:
       - name: quit:quit
         id: 874445914397329
+      - name: spell:spell
+        id: 329169453139963
     entities:
     - name: color
       id: 684829610087754
@@ -85,18 +87,35 @@ MonoBehaviour:
       - keyword: grassball
         synonyms:
         - grassball
+      - keyword: gun
+        synonyms:
+        - gun
       - keyword: ice
         synonyms:
         - ice
       - keyword: light
         synonyms:
         - light
+        - thunder
+      - keyword: sand
+        synonyms:
+        - sand
       - keyword: snowball
         synonyms:
         - snowball
+      - keyword: storm
+        synonyms:
+        - storm
+        - thunder
+      - keyword: thunder
+        synonyms:
+        - thunder
       - keyword: water
         synonyms:
         - water
+      - keyword: wind
+        synonyms:
+        - wind
     - name: wit$contact
       id: 535a8111-9b01-4678-80ae-53a22ef0bf5b
       lookups: []
