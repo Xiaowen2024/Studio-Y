@@ -948,11 +948,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 17fea58f-f102-41c3-af55-9d7644fa06de
+  cloudProjectId: a87fbe9e-5b2b-4db2-856f-21d281e54b41
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Project (1)
-  organizationId: pieproductions
+  projectName: Project
+  organizationId: cathyzhang_unity
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
