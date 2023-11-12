@@ -42,6 +42,7 @@ public class spellManager : MonoBehaviour
         spellObjectDictionary["storm"] = windObject;
         spellObjectDictionary["water"] = waterObject;
         spellObjectDictionary["light"] = lightObject;
+        initiateSkeleton();
     }
 
    
@@ -97,7 +98,7 @@ public class spellManager : MonoBehaviour
         if (skeletonInitialized){
             return;
         }
-       newZombie = Instantiate(zombiePrefab, new Vector3(0,0,8), Quaternion.identity);
+       newZombie = Instantiate(zombiePrefab, new Vector3(0,-2,8), Quaternion.identity);
        skeletonInitialized = true;
     }
     
