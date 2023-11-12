@@ -13,13 +13,18 @@ public class spellManager : MonoBehaviour
     public GameObject fireObject; 
     public GameObject iceObject;
 
-    public GameObject gunObject;
+    public GameObject windObject;
 
-    public GameObject swordObject;
+    public GameObject waterObject;
 
     public GameObject lightObject;
 
     public GameObject spellManagerObject;
+
+    public GameObject zombiePrefab;
+    private GameObject newZombie;
+
+    private bool skeletonInitialized = false;
 
     [SerializeField] private Wit wit;
 
@@ -29,16 +34,14 @@ public class spellManager : MonoBehaviour
     {
         fireObject.SetActive(true);
         iceObject.SetActive(true);
-        gunObject.SetActive(true);
-        swordObject.SetActive(true);
+        windObject.SetActive(true);
+        waterObject.SetActive(true);
         lightObject.SetActive(true);
-       spellObjectDictionary["fire"] = fireObject;
+        spellObjectDictionary["fire"] = fireObject;
         spellObjectDictionary["ice"] = iceObject;
-        spellObjectDictionary["gun"] = gunObject;
-        spellObjectDictionary["sword"] = swordObject;
+        spellObjectDictionary["storm"] = windObject;
+        spellObjectDictionary["water"] = waterObject;
         spellObjectDictionary["light"] = lightObject;
-        
-        
     }
 
    
@@ -82,11 +85,31 @@ public class spellManager : MonoBehaviour
             {
                 // Retrieve the corresponding object and instantiate it, for example
                 GameObject spellObject = spellObjectDictionary[spellName];
-                GameObject spellCopy = Instantiate(spellObject, spellManagerObject.transform.position, spellManagerObject.transform.rotation);
-                Destroy(spellCopy, 3f);
+                GameObject spellCopy = Instantiate(spellObject, newZombie.transform.position, spellManagerObject.transform.rotation);
+                spellCopy.transform.SetParent(newZombie.transform, true);
+                //Invoke()
+                //newZombie.destroyZombie();
             }
-           
         }
+    }
+
+    public void initiateSkeleton(){
+        if (skeletonInitialized){
+            return;
+        }
+       newZombie = Instantiate(zombiePrefab, new Vector3(0,0,8), Quaternion.identity);
+       skeletonInitialized = true;
+    }
+    
+    public void delayInitializeSkeleton(){
+        Invoke("initiateSkeleton", 3f);
+    }
+
+    public void destroySkeleton(){
+        Destroy(newZombie);
+        Debug.Log("Destroy zombie");
+        skeletonInitialized = false;
+        delayInitializeSkeleton();
     }
 
     private IEnumerator DeactivateAfterDelay(GameObject obj, float delay)
@@ -98,3 +121,4 @@ public class spellManager : MonoBehaviour
 }
 }
 }
+
