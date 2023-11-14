@@ -31,7 +31,11 @@ public class spellManager : MonoBehaviour
     
     public List<GameObject> poses;
     public List<GameObject> poseCards;
+
+    public List<GameObject> poses2;
+    public List<GameObject> poseCards2;
     public int poseIndex;
+    public int poseIndex2;
     private float debounce = 3f;
     private float timer = 0f;
     public GameObject book;
@@ -76,6 +80,19 @@ public class spellManager : MonoBehaviour
         
     }
     
+    public void PoseSuccess2()
+    {
+        if (debounce > timer)
+        {
+            timer = 0;
+            return;
+        }
+        poseCards[poseIndex].GetComponent<SpriteRenderer>().color = Color.green;
+        poseCards[poseIndex].GetComponent<AudioSource>().Play();
+        StartCoroutine(WaitForSeconds(2f));
+        
+    }
+    
     IEnumerator WaitForSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
@@ -83,6 +100,28 @@ public class spellManager : MonoBehaviour
     }
     
     private void NextPose()
+    {
+        if (poseIndex <= poses.Count - 1)
+        {
+            poses[poseIndex].SetActive(false);
+            poseCards[poseIndex].SetActive(false);
+            poseIndex++;
+            if (poseIndex != poses.Count)
+            {
+                poses[poseIndex].SetActive(true);
+                poseCards[poseIndex].SetActive(true);
+            }
+        }
+
+        if (poseIndex == poses.Count)
+        {
+            poses[poseIndex].SetActive(false);
+            poseCards[poseIndex].SetActive(false);
+            uiManager.lessonCompleted = true;
+        }
+    }
+    
+    private void NextPose2()
     {
         if (poseIndex <= poses.Count - 1)
         {
